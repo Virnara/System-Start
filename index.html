@@ -8,39 +8,36 @@
 </head>
 <body>
 
+<audio id="bgm" loop>
+    <source src="theme.mp3" type="audio/mpeg">
+</audio>
+
 <div id="system-loader">
     <div class="loader-content">
         <p class="blink-text">> Initializing System...</p>
-        <p class="delay-1">> Loading Character Profile...</p>
-        <p class="delay-2">> Synchronizing Psychological Matrix...</p>
-        <p class="delay-3" style="color: #00f0ff;">> Status Window Activated.</p>
+        <p class="delay-1">> Loading Knowledge Tree...</p>
+        <p class="delay-2">> Synchronizing Equipment...</p>
+        <p class="delay-3" style="color: #00f0ff;">> World State Activated.</p>
     </div>
 </div>
 
 <div class="system-banner">
     <div class="banner-line">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
     <div class="banner-info">
-        <span>SYSTEM STATUS: ACTIVE</span>
-        <span>User: Radel</span>
-        <span>Current Version: v19.0</span>
-        <span>System Time: <span id="realtime-clock">00:00:00</span></span>
-        <span>Location: Indonesia</span>
+        <span>SYSTEM: ACTIVE</span>
+        <span id="day-night-indicator">Day Mode Activated</span>
+        <span>Time: <span id="realtime-clock">00:00:00</span></span>
+        <button id="bgm-btn" onclick="toggleBGM()">▶ Play Theme</button>
     </div>
     <div class="banner-line">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
 </div>
 
 <div class="system-container">
     
-    <div id="secret-console" class="secret-panel" style="display: none;">
-        <h3>⚠️ SECRET QUEST UNLOCKED ⚠️</h3>
-        <p>Congratulations. You discovered the hidden developer console.</p>
-        <p class="sys-msg">"The path of the Knowledge Seeker never truly ends."</p>
-    </div>
-
     <header class="system-header">
         <div class="system-avatar"></div>
         <h1 class="glitch-text">Radel</h1>
-        <p class="system-subtitle">《 SYSTEM USER 》</p>
+        <p class="system-subtitle">《 EXPLORER 》</p>
         
         <div class="header-status-grid">
             <div class="level-box">
@@ -52,241 +49,201 @@
                 </div>
             </div>
             <div><strong>Rank:</strong> D</div>
-            <div><strong>Class:</strong> Explorer</div>
-            <div><strong>Title:</strong> Lv.1 Container Explorer</div>
-            <div><strong>Player ID:</strong> 251572010038</div>
-            <div><strong>Potential:</strong> <span class="status-unk">Unknown</span></div>
+            <div><strong>Class:</strong> Knowledge Seeker</div>
+            <div>
+                <strong>Completion:</strong> 87% <br>
+                <span style="font-size: 0.75rem; color: #a855f7;">∞ Still Exploring...</span>
+            </div>
         </div>
     </header>
 
     <nav class="system-tabs">
         <button class="tab-link active" onclick="switchTab(event, 'status')">Status</button>
-        <button class="tab-link" onclick="switchTab(event, 'attributes')">Attributes</button>
-        <button class="tab-link" onclick="switchTab(event, 'skills')">Abilities</button>
-        <button class="tab-link" onclick="switchTab(event, 'quests')">Quest Log</button>
+        <button class="tab-link" onclick="switchTab(event, 'journey')">Journey</button>
+        <button class="tab-link" onclick="switchTab(event, 'abilities')">Abilities</button>
+        <button class="tab-link" onclick="switchTab(event, 'console')">Terminal</button>
     </nav>
 
     <main class="system-body">
         
         <section id="status" class="tab-panel active">
-            <h2>[ System Analysis ]</h2>
-            <div class="status-layout">
-                <p class="system-p italic-desc">
-                    "Seorang pembelajar yang memiliki rasa ingin tahu tinggi terhadap hampir semua hal. Lebih menikmati proses memahami dibanding sekadar mengetahui jawaban. Menyukai eksperimen sebagai cara belajar, baik melalui proyek teknologi, IoT, server, maupun dari hal sederhana seperti game strategi, anime, dan komik yang memperluas sudut pandang. Bekerja paling efektif secara mandiri, namun mampu menjadi penopang tim ketika situasi membutuhkan penyelesaian masalah. Saat ini masih membangun kepercayaan diri dalam komunikasi, tetapi terus berkembang melalui pengalaman dan tantangan baru."
-                </p>
-                
-                <div class="vital-stats">
-                    <h3>[ Buffs & Debuffs Matrix ]</h3>
-                    <div class="buff-wrapper">
-                        <div class="buff-item positive">
-                            <strong>Trusted Companion (Active Buff)</strong>
-                            <p class="buff-desc">A trusted person continues to provide emotional support during difficult times.</p>
-                            <span class="buff-effect">+10 Motivation, +8 Stability, +5 Confidence</span>
-                        </div>
-                        <div class="buff-item negative">
-                            <strong>Overthinking (Current Debuff)</strong>
-                            <p class="buff-desc">Sometimes spends too much time seeking the best solution before taking action.</p>
-                            <span class="buff-effect">Temporal Action Delay Activated</span>
-                        </div>
+            <h2>[ Daily Status ]</h2>
+            <div class="daily-status-grid">
+                <div class="status-bar">
+                    <span>Coffee Level</span>
+                    <span class="ascii-bar coffee">███████░░░</span>
+                </div>
+                <div class="status-bar">
+                    <span>Energy</span>
+                    <span class="ascii-bar energy">████████░░</span>
+                </div>
+                <div class="status-bar">
+                    <span>Motivation</span>
+                    <span class="ascii-bar motivation">██████████</span>
+                </div>
+                <div class="status-bar">
+                    <span>Current Action</span>
+                    <span class="action-text blink-text">Learning...</span>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 30px;">[ Support & Debuffs ]</h2>
+            <div class="vital-stats">
+                <div class="buff-wrapper">
+                    <div class="buff-item positive">
+                        <strong>Trusted Companion (Active Buff)</strong>
+                        <p class="buff-desc">A trusted presence continues to provide support.</p>
+                        <span class="buff-effect">+ Motivation, + Emotional Stability</span>
+                    </div>
+                    <div class="buff-item negative">
+                        <strong>Overthinking (Current Debuff)</strong>
+                        <p class="buff-desc">Spends too much time seeking the best solution before action.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="system-divider">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
-            
-            <h2>[ Psychological Analysis ]</h2>
-            <div class="psycho-grid">
-                <div class="psycho-card"><strong>Personality</strong><span>Introvert</span></div>
-                <div class="psycho-card"><strong>Learning Style</strong><span>Hands-on Experimentation</span></div>
-                <div class="psycho-card"><strong>Thinking Style</strong><span>Analytical</span></div>
-                <div class="psycho-card"><strong>Decision Making</strong><span>Observation First</span></div>
-                <div class="psycho-card"><strong>Favorite Environment</strong><span>Independent Workspace</span></div>
+            <h2 style="margin-top: 30px;">[ Statistics Log ]</h2>
+            <div class="stats-grid">
+                <div class="stat-box"><strong>5</strong><span>Repositories</span></div>
+                <div class="stat-box"><strong>8</strong><span>Projects</span></div>
+                <div class="stat-box"><strong>1</strong><span>Research</span></div>
+                <div class="stat-box"><strong>4</strong><span>Languages</span></div>
+                <div class="stat-box"><strong>12</strong><span>Tech Explored</span></div>
             </div>
+        </section>
 
-            <h2 style="margin-top: 35px;">[ Timeline Archive ]</h2>
+        <section id="journey" class="tab-panel">
+            <h2>[ Journey Timeline ]</h2>
             <div class="system-timeline">
                 <div class="time-node">
-                    <div class="node-year">2013</div>
-                    <div class="node-content"><h3>Started Elementary School</h3></div>
+                    <div class="node-year">2007</div>
+                    <div class="node-content"><h3>Character Created</h3></div>
+                </div>
+                <div class="time-node">
+                    <div class="node-year">2019</div>
+                    <div class="node-content"><h3>Joined Junior High School Paskibra</h3></div>
                 </div>
                 <div class="time-node">
                     <div class="node-year">2022</div>
-                    <div class="node-content"><h3>Entered Vocational School (Layanan Kesehatan)</h3></div>
+                    <div class="node-content"><h3>Started Vocational School (Health Services)</h3></div>
                 </div>
                 <div class="time-node">
                     <div class="node-year">2024</div>
-                    <div class="node-content"><h3>Completed Internship (PKL Archive)</h3></div>
+                    <div class="node-content"><h3>Completed Internship</h3></div>
                 </div>
                 <div class="time-node">
                     <div class="node-year">2025</div>
-                    <div class="node-content"><h3>Entered University (STMIK Tazkia)</h3></div>
+                    <div class="node-content"><h3>Entered Information Systems</h3></div>
                 </div>
                 <div class="time-node">
                     <div class="node-year">2026</div>
-                    <div class="node-content"><h3>Started Building Infrastructure Projects</h3></div>
+                    <div class="node-content"><h3>Published First Research & Built Smart Attendance System</h3></div>
+                </div>
+                <div class="time-node">
+                    <div class="node-year">2026</div>
+                    <div class="node-content"><h3>Started Docker Journey</h3></div>
                 </div>
                 <div class="time-node future">
                     <div class="node-year">???</div>
-                    <div class="node-content"><h3>Future Unknown...</h3></div>
+                    <div class="node-content"><h3>Future Continues...</h3></div>
                 </div>
+            </div>
+            
+            <h2 style="margin-top: 30px;">[ World Exploration ]</h2>
+            <div class="exploration-box">
+                <p><strong>Explored:</strong> ✓ Docker, ✓ Linux, ✓ Nginx, ✓ ESP32, ✓ RFID, ✓ PHP, ✓ MySQL</p>
+                <p><strong>Unknown Areas:</strong> <span style="color: #64748b;">[ ? ] [ ? ] [ ? ]</span></p>
+                <p style="margin-top:10px; font-style:italic; color:#f59e0b;">* Unlock Condition: Keep Learning.</p>
             </div>
         </section>
 
-        <section id="attributes" class="tab-panel">
-            <h2>[ Personal Attributes ]</h2>
-            <div class="attributes-grid">
-                <div class="attr-card"><span class="attr-name">Curiosity</span><span class="attr-rank rank-ex">EX</span></div>
-                <div class="attr-card"><span class="attr-name">Adaptability</span><span class="attr-rank rank-s">A+</span></div>
-                <div class="attr-card"><span class="attr-name">Critical Thinking</span><span class="attr-rank rank-s">A+</span></div>
-                <div class="attr-card"><span class="attr-name">Persistence</span><span class="attr-rank rank-a">A</span></div>
-                <div class="attr-card"><span class="attr-name">Responsibility</span><span class="attr-rank rank-a">A</span></div>
-                <div class="attr-card"><span class="attr-name">Communication</span><span class="attr-rank rank-c">C</span></div>
-                <div class="attr-card"><span class="attr-name">Leadership</span><span class="attr-rank rank-c">C</span></div>
+        <section id="abilities" class="tab-panel">
+            <h2>[ Knowledge Tree ]</h2>
+            <pre class="ascii-tree">
+Programming
+├── HTML
+├── CSS
+├── JavaScript
+└── PHP
+
+Infrastructure
+├── Linux
+├── Docker
+├── Nginx
+└── Networking
+
+IoT
+├── ESP32
+├── RFID
+└── Fingerprint
+
+Database
+└── MySQL
+            </pre>
+
+            <h2 style="margin-top: 30px;">[ Current Focus ]</h2>
+            <div class="focus-grid">
+                <div class="focus-item"><span>Docker</span> <span class="ascii-bar focus">■■■■□□□□</span></div>
+                <div class="focus-item"><span>Cloud Computing</span> <span class="ascii-bar focus">■■■□□□□□</span></div>
+                <div class="focus-item"><span>Kubernetes</span> <span class="ascii-bar focus">■■□□□□□□</span></div>
+                <div class="focus-item"><span>Backend Dev</span> <span class="ascii-bar focus">■■■■■□□□</span></div>
             </div>
 
-            <h2 style="margin-top: 30px;">[ Passive Skills ]</h2>
-            <div class="passive-wrapper">
-                <div class="passive-card">
-                    <h4>Explorer's Instinct</h4>
-                    <p>Every unfamiliar technology encountered increases baseline curiosity and research drive.</p>
-                </div>
-                <div class="passive-card">
-                    <h4>Adaptive Learning</h4>
-                    <p>Learning speed and comprehension increase exponentially through direct hands-on experimentation.</p>
-                </div>
-                <div class="passive-card">
-                    <h4>Independent Thinker</h4>
-                    <p>Operational efficiency and focus are significantly enhanced when analyzing code or infrastructure independently.</p>
-                </div>
-                <div class="passive-card">
-                    <h4>Critical Response</h4>
-                    <p>Problem-solving speed and logical focus are heavily amplified when a small team hits a critical bottleneck.</p>
-                </div>
-            </div>
-
-            <h2 style="margin-top: 30px;">[ Achievement Unlocked ]</h2>
-            <div class="achieve-container">
-                <div class="achieve-badge">🏆 First Website</div>
-                <div class="achieve-badge">🏆 Docker Explorer</div>
-                <div class="achieve-badge">🏆 Smart Attendance System</div>
-                <div class="achieve-badge">🏆 Smart Air Monitoring System</div>
-                <div class="achieve-badge">🏆 Jelly Potter Website</div>
-                <div class="achieve-badge">🏆 First Research Publication</div>
-                <div class="achieve-badge locked">
-                    🔒 Docker Certified
-                    <span class="tooltip">Not unlocked yet...</span>
-                </div>
+            <h2 style="margin-top: 30px;">[ Current Equipment ]</h2>
+            <div class="equipment-grid">
+                <div class="equip-card"><strong>💻 Laptop</strong><br>Advan Workmate<br><span class="eq-spec">Ryzen 5 3500U</span></div>
+                <div class="equip-card"><strong>📱 Device</strong><br>Tecno Camon 40 Pro<br><span class="eq-spec">5G Network</span></div>
+                <div class="equip-card"><strong>🖥 OS</strong><br>Ubuntu / Windows<br><span class="eq-spec">Dual Boot</span></div>
+                <div class="equip-card"><strong>🛠 Editor</strong><br>VS Code<br><span class="eq-spec">Primary IDE</span></div>
             </div>
         </section>
 
-        <section id="skills" class="tab-panel">
-            <h2>[ Learned Skills ]</h2>
-            <div class="ability-grid">
-                <div class="skill-item"><span>Docker & Containerization</span><span class="lvl-tag">Lv. 6</span></div>
-                <div class="skill-item"><span>Linux Administration</span><span class="lvl-tag">Lv. 5</span></div>
-                <div class="skill-item"><span>Backend Development (PHP/Python)</span><span class="lvl-tag">Lv. 4</span></div>
-                <div class="skill-item"><span>Networking Architecture</span><span class="lvl-tag">Lv. 4</span></div>
-                <div class="skill-item"><span>Cloud Computing</span><span class="lvl-tag">Lv. 2</span></div>
-                <div class="skill-item"><span>Kubernetes</span><span class="lvl-tag">Lv. 1</span></div>
-                <div class="skill-item locked-skill"><span>Cyber Security</span><span class="lvl-tag">Locked</span></div>
-                <div class="skill-item locked-skill"><span>AI Engineering</span><span class="lvl-tag">Locked</span></div>
-            </div>
-
-            <h2 style="margin-top: 30px;">[ Unknown Skill ]</h2>
-            <div class="unknown-skill-card">
-                <h4>???</h4>
-                <p>Unlock Requirement: Continue exploring.</p>
-            </div>
-
-            <h2 style="margin-top: 35px;">[ Developer Inventory ]</h2>
-            <div class="inventory-grid">
-                <div class="inv-slot">🐳 Docker</div>
-                <div class="inv-slot">🐙 Git & GitHub</div>
-                <div class="inv-slot">💻 VS Code</div>
-                <div class="inv-slot">🐧 Linux (Ubuntu/Debian)</div>
-                <div class="inv-slot">⚙️ Nginx</div>
-                <div class="inv-slot">🗄️ MySQL / MariaDB</div>
-                <div class="inv-slot">🔌 Arduino IDE</div>
-                <div class="inv-slot">📟 ESP32 / RFID Node</div>
-            </div>
-        </section>
-
-        <section id="quests" class="tab-panel">
-            <h2>[ Main Quests ]</h2>
-            <ul class="quest-list">
-                <li class="quest-item open">Graduate with Excellent GPA</li>
-                <li class="quest-item open">Publish Open Source Project</li>
-                <li class="quest-item open">Master Docker Ecosystem</li>
-                <li class="quest-item open">Learn Kubernetes Architecture</li>
-                <li class="quest-item open">Build Home Server Architecture</li>
-                <li class="quest-item open">Deploy Production Infrastructure Application</li>
-                <li class="quest-item open">Obtain Cloud Professional Certification</li>
-                <li class="quest-item open">Become Infrastructure / DevOps Engineer</li>
-            </ul>
-
-            <h2 style="margin-top: 30px;">[ Completed Sub-Quests ]</h2>
-            <ul class="quest-list">
-                <li class="quest-item clear">Started University Quest</li>
-                <li class="quest-item clear">Completed Vocational High School Internship</li>
-                <li class="quest-item clear">Built Smart Attendance System (RFID + Fingerprint)</li>
-                <li class="quest-item clear">Built Smart Air Monitoring System</li>
-                <li class="quest-item clear">Deployed First Personal Container Service</li>
-                <li class="quest-item clear">Joined Student Executive Board (BEM Organization)</li>
-            </ul>
-
-            <h2 style="margin-top: 30px;">[ Final Quest ]</h2>
-            <div class="ultimate-quest-box">
-                <p>"Create something meaningful enough that people remember the name behind it."</p>
+        <section id="console" class="tab-panel">
+            <h2>[ Terminal: Radel.exe ]</h2>
+            <div class="terminal-window">
+                <div class="terminal-output" id="cmd-output">
+                    System Boot... OK<br>
+                    Type 'help' for available commands.<br><br>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="prompt-symbol">></span>
+                    <input type="text" id="cmd-input" autocomplete="off" autofocus>
+                </div>
             </div>
         </section>
     </main>
 
-    <div class="system-log-section">
-        <div class="log-title">SYSTEM LOG</div>
-        <div class="log-lines">
-            <p>> Every project completed increased experience.</p>
-            <p>> Every failure revealed a new lesson.</p>
-            <p>> Every unanswered question unlocked another journey.</p>
-            <p class="log-highlight">> Current Status: Still Exploring...</p>
-        </div>
-    </div>
-
     <footer class="system-footer">
-        <p class="motto">"Knowledge increases with every challenge completed."</p>
-        <p class="sys-msg">— System Message</p>
+        <p class="motto">"Curiosity is stronger than talent."</p>
     </footer>
 </div>
 
 <script>
-// 1. REALTIME LIVE CLOCK FOR BANNER
-function updateClock() {
+// 1. CLOCK & DAY/NIGHT TRACKER
+function updateTimeAndMode() {
     const clockElement = document.getElementById("realtime-clock");
+    const modeIndicator = document.getElementById("day-night-indicator");
     if (!clockElement) return;
+    
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
     clockElement.innerText = `${hours}:${minutes}:${seconds}`;
-}
-setInterval(updateClock, 1000);
 
-// 2. AUTOMATIC LEVEL UP LOGIC
-function calculateLevelAndAge() {
-    try {
-        const birthDate = new Date(2007, 6, 15); // Sesuai data kamu
-        const today = new Date();
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const monthDiff = today.getMonth() - birthDate.getMonth();
-        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) { age--; }
-        const ageEl = document.getElementById("user-age");
-        if (ageEl) ageEl.innerText = age;
-    } catch (err) { console.log(err); }
+    if (now.getHours() >= 6 && now.getHours() < 18) {
+        modeIndicator.innerText = "Day Mode Activated";
+        modeIndicator.style.color = "#fbbf24";
+    } else {
+        modeIndicator.innerText = "Night Mode Activated";
+        modeIndicator.style.color = "#a78bfa";
+    }
 }
+setInterval(updateTimeAndMode, 1000);
 
-// 3. SYSTEM LOADER TIMEOUT
+// 2. SYSTEM LOADER
 window.addEventListener('DOMContentLoaded', () => {
-    updateClock();
-    calculateLevelAndAge();
+    updateTimeAndMode();
     setTimeout(() => {
         const loader = document.getElementById('system-loader');
         if (loader) {
@@ -296,7 +253,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 2800);
 });
 
-// 4. TAB SWITCH LOGIC
+// 3. TAB SWITCH
 function switchTab(evt, panelId) {
     let i, panels, links;
     panels = document.getElementsByClassName("tab-panel");
@@ -305,24 +262,83 @@ function switchTab(evt, panelId) {
     for (i = 0; i < links.length; i++) { links[i].classList.remove("active"); }
     document.getElementById(panelId).classList.add("active");
     evt.currentTarget.classList.add("active");
+    
+    // Focus terminal input if console tab is opened
+    if(panelId === 'console') {
+        document.getElementById('cmd-input').focus();
+    }
 }
 
-// 5. EASTER EGG (KONAMI CODE DETECTOR)
-const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-let konamiIndex = 0;
-document.addEventListener('keydown', (e) => {
-    if (e.key === konamiCode[konamiIndex]) {
-        konamiIndex++;
-        if (konamiIndex === konamiCode.length) {
-            const consolePanel = document.getElementById('secret-console');
-            if (consolePanel) {
-                consolePanel.style.display = 'block';
-                consolePanel.scrollIntoView({ behavior: 'smooth' });
-            }
-            konamiIndex = 0;
-        }
-    } else { konamiIndex = 0; }
+// 4. BGM TOGGLE
+let isPlaying = false;
+function toggleBGM() {
+    const bgm = document.getElementById('bgm');
+    const btn = document.getElementById('bgm-btn');
+    if (isPlaying) {
+        bgm.pause();
+        btn.innerText = "▶ Play Theme";
+        btn.style.color = "#38bdf8";
+    } else {
+        bgm.play().catch(e => console.log("Audio play failed:", e));
+        btn.innerText = "⏸ Mute Theme";
+        btn.style.color = "#4ade80";
+    }
+    isPlaying = !isPlaying;
+}
+
+// 5. RADEL.EXE TERMINAL LOGIC
+const cmdInput = document.getElementById('cmd-input');
+const cmdOutput = document.getElementById('cmd-output');
+
+const quotes = [
+    '"Every experiment teaches something."',
+    '"Curiosity is stronger than talent."',
+    '"I don\'t want to know everything. I just don\'t want to stop learning."',
+    '"Build. Break. Learn. Repeat."'
+];
+
+cmdInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        const cmd = this.value.trim().toLowerCase();
+        printTerminal(`> ${this.value}`);
+        this.value = '';
+        processCommand(cmd);
+    }
 });
+
+function printTerminal(text) {
+    cmdOutput.innerHTML += text + "<br>";
+    cmdOutput.scrollTop = cmdOutput.scrollHeight;
+}
+
+function processCommand(cmd) {
+    switch(cmd) {
+        case 'help':
+            printTerminal("Available Commands: <br> - status <br> - projects <br> - about <br> - quote <br> - clear");
+            break;
+        case 'status':
+            printTerminal("Level: 19 | Rank: D | Buff: Active | Completion: 87% (Still Exploring)");
+            break;
+        case 'projects':
+            printTerminal("1. Smart Attendance<br>2. IoT Air Monitor<br>3. Status Window<br>4. Jelly Potter");
+            break;
+        case 'about':
+            printTerminal("Explorer - Level 19.<br>Current Objective: Continue Learning.");
+            break;
+        case 'quote':
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            printTerminal(randomQuote);
+            break;
+        case 'clear':
+            cmdOutput.innerHTML = "";
+            break;
+        case '':
+            break;
+        default:
+            printTerminal(`Command not found: ${cmd}. Type 'help' for list of commands.`);
+    }
+    printTerminal("<br>");
+}
 </script>
 
 </body>
