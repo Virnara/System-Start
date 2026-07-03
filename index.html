@@ -17,18 +17,45 @@
     </div>
 </div>
 
+<div class="system-banner">
+    <div class="banner-line">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+    <div class="banner-info">
+        <span>SYSTEM INITIALIZED</span>
+        <span>User: Radel</span>
+        <span>Synchronization: 100%</span>
+        <span>Current Version: v19.0</span>
+        <span>System Time: <span id="realtime-clock">00:00:00</span></span>
+        <span>Location: Indonesia</span>
+    </div>
+    <div class="banner-line">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+</div>
+
 <div class="system-container">
+    
+    <div id="secret-console" class="secret-panel" style="display: none;">
+        <h3>⚠️ SECRET QUEST UNLOCKED ⚠️</h3>
+        <p>Congratulations. You discovered the hidden developer console.</p>
+        <p class="sys-msg">"The path of the Ex-Rank begins here."</p>
+    </div>
+
     <header class="system-header">
         <div class="system-avatar"></div>
         <h1 class="glitch-text">Radel</h1>
         <p class="system-subtitle">《 SYSTEM USER 》</p>
         
         <div class="header-status-grid">
-            <div><strong>Level :</strong> <span id="user-level">19</span></div>
-            <div><strong>Class :</strong> Information Systems Student</div>
-            <div><strong>Title :</strong> Container Explorer</div>
-            <div><strong>Player ID :</strong> 251572010038</div>
-            <div><strong>Status :</strong> <span class="status-online">Online</span></div>
+            <div class="level-box">
+                <strong>LEVEL:</strong> <span id="user-level">19</span>
+                <div class="exp-container">
+                    <span class="exp-label">EXP</span>
+                    <div class="exp-bar-bg"><div class="exp-bar-fill" style="width: 82%;"></div></div>
+                    <span class="exp-pct">82%</span>
+                </div>
+            </div>
+            <div><strong>Class:</strong> System Architect Apprentice</div>
+            <div><strong>Title:</strong> Container Explorer</div>
+            <div><strong>Player ID:</strong> 251572010038</div>
+            <div><strong>System State:</strong> <span class="status-active">Active</span></div>
         </div>
     </header>
 
@@ -43,104 +70,171 @@
         
         <section id="status" class="tab-panel active">
             <h2>[ System Analysis ]</h2>
-            <ul class="analysis-list">
-                <li><strong>Nama</strong> <span>: Radel</span></li>
-                <li><strong>Age</strong> <span>: <span id="user-age">19</span> Years</span></li>
-                <li><strong>Level</strong> <span>: <span id="user-level-card">19</span></span></li>
-                <li><strong>Occupation</strong> <span>: Information Systems Student</span></li>
-            </ul>
-            <div class="system-divider">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
-            <p class="system-msg-title">The System has completed its analysis.</p>
-            <p class="system-p">The user is an Information Systems student with a strong curiosity for technology and problem solving. Rather than only learning theories, the user prefers experimenting directly through projects and real implementations.</p>
-            <p class="system-p">Current interests include Linux, Docker, backend architecture, networking, and infrastructure. Every project is treated as an opportunity to gain experience and continuously improve.</p>
+            <div class="status-layout">
+                <ul class="analysis-list">
+                    <li><strong>Name</strong> <span>: Radel</span></li>
+                    <li><strong>Age</strong> <span>: <span id="user-age">19</span> Years</span></li>
+                    <li><strong>Origin</strong> <span>: Indonesia</span></li>
+                    <li><strong>Alignment</strong> <span>: Neutral Good</span></li>
+                    <li><strong>Guild</strong> <span>: University Student</span></li>
+                    <li><strong>Affiliation</strong> <span>: Faculty of Computer Science</span></li>
+                    <li><strong>Occupation</strong> <span>: Student</span></li>
+                </ul>
+                
+                <div class="vital-stats">
+                    <h3>[ Current Condition ]</h3>
+                    <div class="vital-bar">
+                        <div class="vital-label"><span>Mental Energy</span><span>100%</span></div>
+                        <div class="v-bar"><div class="v-fill" style="width: 100%; background: #4ade80;"></div></div>
+                    </div>
+                    <div class="vital-bar">
+                        <div class="vital-label"><span>Motivation</span><span>90%</span></div>
+                        <div class="v-bar"><div class="v-fill" style="width: 90%; background: #38bdf8;"></div></div>
+                    </div>
+                    <div class="vital-bar">
+                        <div class="vital-label"><span>Focus</span><span>80%</span></div>
+                        <div class="v-bar"><div class="v-fill" style="width: 80%; background: #a855f7;"></div></div>
+                    </div>
+                    <div class="buff-badge">COFFEE BUFF: <span class="buff-active">ACTIVE</span></div>
+                </div>
+            </div>
+
+            <div class="system-divider">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
             
-            <h2 style="margin-top: 30px;">[ Current Mission ]</h2>
-            <ul class="mission-list">
-                <li class="mission-item done">Complete Bachelor's Degree</li>
-                <li class="mission-item done">Master Docker & Linux</li>
-                <li class="mission-item done">Learn Cloud Computing</li>
-                <li class="mission-item">Build Useful Applications</li>
-                <li class="mission-item">Publish More Projects</li>
-                <li class="mission-item">Become DevOps / Cloud Engineer</li>
-            </ul>
+            <p class="system-msg-title">System Analysis Complete.</p>
+            <p class="system-p">Subject possesses high curiosity and adaptive learning capabilities. Observed behavior indicates a strong preference for hands-on experimentation over passive theoretical study.</p>
+            <p class="system-p">Current specialization focuses on Linux, containerization, backend development, networking, and server infrastructure. Every completed project contributes to continuous growth toward becoming a reliable software and infrastructure engineer.</p>
+            
+            <div class="threat-grid">
+                <div class="threat-box">Threat Level: <span class="rank-b" style="color: #64748b;">Harmless.</span></div>
+                <div class="threat-box">Growth Potential: <span class="rank-ex">Extremely High.</span></div>
+            </div>
+
+            <h2 style="margin-top: 35px;">[ Timeline Archive ]</h2>
+            <div class="system-timeline">
+                <div class="time-node">
+                    <div class="node-year">2013</div>
+                    <div class="node-content"><h3>Started School</h3></div>
+                </div>
+                <div class="time-node">
+                    <div class="node-year">2022</div>
+                    <div class="node-content"><h3>Entered Vocational School</h3></div>
+                </div>
+                <div class="time-node">
+                    <div class="node-year">2025</div>
+                    <div class="node-content"><h3>Entered University</h3></div>
+                </div>
+                <div class="time-node">
+                    <div class="node-year">2026</div>
+                    <div class="node-content"><h3>Started Learning Docker</h3></div>
+                </div>
+                <div class="time-node future">
+                    <div class="node-year">???</div>
+                    <div class="node-content"><h3>Future Unknown...</h3></div>
+                </div>
+            </div>
         </section>
 
         <section id="attributes" class="tab-panel">
             <h2>[ Personal Attributes ]</h2>
             <div class="attributes-grid">
-                <div class="attr-card"><span class="attr-name">Knowledge</span><span class="attr-rank rank-s">S+</span></div>
                 <div class="attr-card"><span class="attr-name">Curiosity</span><span class="attr-rank rank-ex">EX</span></div>
-                <div class="attr-card"><span class="attr-name">Creativity</span><span class="attr-rank rank-a">A+</span></div>
-                <div class="attr-card"><span class="attr-name">Problem Solving</span><span class="attr-rank rank-s">S</span></div>
+                <div class="attr-card"><span class="attr-name">Learning Ability</span><span class="attr-rank rank-s">S</span></div>
+                <div class="attr-card"><span class="attr-name">Problem Solving</span><span class="attr-rank rank-s">A+</span></div>
                 <div class="attr-card"><span class="attr-name">Adaptability</span><span class="attr-rank rank-a">A</span></div>
+                <div class="attr-card"><span class="attr-name">Creativity</span><span class="attr-rank rank-a">A</span></div>
                 <div class="attr-card"><span class="attr-name">Discipline</span><span class="attr-rank rank-b">B+</span></div>
                 <div class="attr-card"><span class="attr-name">Communication</span><span class="attr-rank rank-b">B</span></div>
                 <div class="attr-card"><span class="attr-name">Leadership</span><span class="attr-rank rank-b">B</span></div>
             </div>
 
+            <h2 style="margin-top: 30px;">[ Hidden Stats ]</h2>
+            <div class="attributes-grid">
+                <div class="attr-card"><span class="attr-name">Persistence</span><span class="attr-rank rank-s">S</span></div>
+                <div class="attr-card"><span class="attr-name">Vision</span><span class="attr-rank rank-s">A+</span></div>
+                <div class="attr-card"><span class="attr-name">Stress Resistance</span><span class="attr-rank rank-b">B+</span></div>
+                <div class="attr-card"><span class="attr-name">Luck</span><span class="attr-rank rank-b">B</span></div>
+            </div>
+
             <h2 style="margin-top: 30px;">[ Achievement Unlocked ]</h2>
             <div class="achieve-container">
-                <div class="achieve-badge">🏆 First Container</div>
+                <div class="achieve-badge">🏆 First Docker Container</div>
+                <div class="achieve-badge">🏆 Built Personal Portfolio</div>
                 <div class="achieve-badge">🏆 Linux Explorer</div>
-                <div class="achieve-badge">🏆 Docker Initiate</div>
-                <div class="achieve-badge">🏆 Continuous Learner</div>
+                <div class="achieve-badge">🏆 Student Organization Member</div>
+                <div class="achieve-badge">🏆 Academic Research Contributor</div>
+                <div class="achieve-badge">🏆 Container Summoner</div>
                 <div class="achieve-badge">🏆 Repository Guardian</div>
+                <div class="achieve-badge">🏆 Bug Hunter</div>
+                <div class="achieve-badge">🏆 Night Owl Developer</div>
+                <div class="achieve-badge locked">
+                    🔒 Secret Achievement
+                    <span class="tooltip">Not unlocked yet...</span>
+                </div>
             </div>
         </section>
 
         <section id="skills" class="tab-panel">
             <h2>[ Learned Skills ]</h2>
             <div class="ability-wrapper">
-                <div class="ability-slot">
-                    <div class="ability-label"><span>Docker & Containerization</span><span>█████████░</span></div>
-                </div>
-                <div class="ability-slot">
-                    <div class="ability-label"><span>Linux Administration</span><span>████████░░</span></div>
-                </div>
-                <div class="ability-slot">
-                    <div class="ability-label"><span>Backend Development</span><span>███████░░░</span></div>
-                </div>
-                <div class="ability-slot">
-                    <div class="ability-label"><span>Networking Architecture</span><span>███████░░░</span></div>
-                </div>
-                <div class="ability-slot">
-                    <div class="ability-label"><span>Git & GitHub Control</span><span>████████░░</span></div>
-                </div>
-                <div class="ability-slot">
-                    <div class="ability-label"><span>Database Design</span><span>███████░░░</span></div>
-                </div>
+                <div class="skill-item"><span>Docker & Containerization</span><span class="lvl-tag">Lv. 7</span></div>
+                <div class="skill-item"><span>Linux Administration</span><span class="lvl-tag">Lv. 6</span></div>
+                <div class="skill-item"><span>Backend Development</span><span class="lvl-tag">Lv. 5</span></div>
+                <div class="skill-item"><span>Networking Architecture</span><span class="lvl-tag">Lv. 5</span></div>
+                <div class="skill-item"><span>Git & GitHub Control</span><span class="lvl-tag">Lv. 5</span></div>
+                <div class="skill-item"><span>Database Design</span><span class="lvl-tag">Lv. 4</span></div>
+                <div class="skill-item"><span>Cloud Computing</span><span class="lvl-tag">Lv. 3</span></div>
+                <div class="skill-item"><span>Kubernetes</span><span class="lvl-tag">Lv. 1</span></div>
             </div>
         </section>
 
         <section id="quests" class="tab-panel">
-            <h2>[ Completed Quests ]</h2>
+            <h2>[ Main Quests ]</h2>
+            <ul class="quest-list">
+                <li class="quest-item open">Obtain Bachelor's Degree</li>
+                <li class="quest-item open">Maintain GPA Above Previous Semester</li>
+                <li class="quest-item open">Build Personal Server</li>
+                <li class="quest-item open">Deploy Production Infrastructure</li>
+                <li class="quest-item open">Learn Kubernetes</li>
+                <li class="quest-item open">Earn Professional Certification</li>
+                <li class="quest-item open">Become DevOps / Cloud Engineer</li>
+            </ul>
+
+            <h2 style="margin-top: 30px;">[ Completed Sub-Quests ]</h2>
             <ul class="quest-list">
                 <li class="quest-item clear">Started University</li>
                 <li class="quest-item clear">Learned Programming Fundamentals</li>
                 <li class="quest-item clear">Built First Docker Image</li>
                 <li class="quest-item clear">Deployed First Container</li>
                 <li class="quest-item clear">Joined Student Organization</li>
-                <li class="quest-item open">Graduate with Excellent GPA</li>
-                <li class="quest-item open">Build Personal Portfolio</li>
-                <li class="quest-item open">Learn Kubernetes</li>
-                <li class="quest-item open">Deploy Production Server</li>
-                <li class="quest-item open">Become Cloud Engineer</li>
+                <li class="quest-item clear">Publish More Projects</li>
             </ul>
         </section>
     </main>
 
     <footer class="system-footer">
-        <p class="motto">"Build. Break. Learn. Repeat."</p>
+        <p class="motto">"Every completed project is another level gained."</p>
         <p class="sys-msg">— System Message</p>
     </footer>
 </div>
 
 <script>
-// 1. FUNGSI UTAMA AUTOMATIC LEVEL UP (BERDASARKAN TANGGAL LAHIR)
+// 1. REALTIME LIVE CLOCK FOR BANNER
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    
+    // Format tanggal otomatis mengikuti sistem saat ini
+    const options = { day: '2-digit', month: 'long', year: 'numeric' };
+    document.getElementById("realtime-clock").innerText = `${hours}:${minutes}:${seconds}`;
+}
+setInterval(updateClock, 1000);
+
+// 2. AUTOMATIC LEVEL UP LOGIC
 function calculateLevelAndAge() {
-    // Sesuai data kamu: Umur 19 tahun di tahun 2026, berarti tahun lahir 2007
-    // Silakan ganti bulan (0-11) dan tanggal sesuai hari ulang tahun aslimu
-    const birthDate = new Date(2007, 6, 15); // Contoh: 15 Juli 2007
+    const birthDate = new Date(2007, 6, 15); // Format: Tahun, Bulan (0-11), Tanggal. Sesuaikan tanggal ultahmu!
     const today = new Date();
     
     let age = today.getFullYear() - birthDate.getFullYear();
@@ -150,23 +244,23 @@ function calculateLevelAndAge() {
         age--;
     }
     
-    // Set level sama dengan umur secara otomatis
     document.getElementById("user-age").innerText = age;
     document.getElementById("user-level").innerText = age;
     document.getElementById("user-level-card").innerText = age;
 }
 
-// 2. FUNGSI ANIMASI LOADING HUD SYSTEM
+// 3. SYSTEM LOADER TIMEOUT
 window.addEventListener('DOMContentLoaded', () => {
+    updateClock();
     calculateLevelAndAge();
     setTimeout(() => {
         const loader = document.getElementById('system-loader');
         loader.style.opacity = '0';
         setTimeout(() => { loader.style.display = 'none'; }, 500);
-    }, 2800); // Tampilan Loading HUD selama 2.8 detik
+    }, 2800);
 });
 
-// 3. FUNGSI PERALIHAN MENU TAB
+// 4. TAB SWITCH LOGIC
 function switchTab(evt, panelId) {
     let i, panels, links;
     panels = document.getElementsByClassName("tab-panel");
@@ -176,6 +270,24 @@ function switchTab(evt, panelId) {
     document.getElementById(panelId).classList.add("active");
     evt.currentTarget.classList.add("active");
 }
+
+// 5. EASTER EGG (KONAMI CODE DETECTOR)
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiIndex = 0;
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+            const consolePanel = document.getElementById('secret-console');
+            consolePanel.style.display = 'block';
+            consolePanel.scrollIntoView({ behavior: 'smooth' });
+            konamiIndex = 0; // Reset
+        }
+    } else {
+        konamiIndex = 0;
+    }
+});
 </script>
 
 </body>
