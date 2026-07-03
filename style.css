@@ -51,7 +51,6 @@ body {
     margin-bottom: 20px; text-align: center;
 }
 .secret-panel h3 { color: #ef4444; font-weight: bold; margin-bottom: 5px; }
-.sys-msg { color: #4b5563; font-size: 0.8rem; text-transform: uppercase; }
 
 /* ================= CONTAINER UTAMA ================= */
 .system-container { 
@@ -105,34 +104,34 @@ body {
 @keyframes hudFade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
 h2 { color: #00f0ff; font-size: 1.15rem; margin-bottom: 15px; text-shadow: 0 0 5px rgba(0,240,255,0.2); text-transform: uppercase; }
-.system-p { text-align: justify; color: #94a3b8; margin-bottom: 12px; font-size: 0.95rem; }
+.system-p { text-align: justify; color: #94a3b8; margin-bottom: 12px; font-size: 0.95rem; line-height: 1.7; }
+.italic-desc { font-style: italic; background: rgba(15, 23, 42, 0.3); padding: 15px; border-left: 2px solid #38bdf8; color: #cbd5e1; }
 .system-divider { color: #1e293b; margin: 20px 0; font-weight: bold; overflow: hidden; white-space: nowrap; }
-.system-msg-title { color: #e2e8f0; font-weight: bold; margin-bottom: 8px; }
 
-/* Status Layout Split */
-.status-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-.analysis-list { list-style: none; }
-.analysis-list li { margin-bottom: 8px; font-size: 0.95rem; }
-.analysis-list strong { color: #38bdf8; display: inline-block; width: 130px; text-transform: uppercase; font-size: 0.8rem; }
-
-/* REAL BUFF BUFF SYSTEM */
-.vital-stats { background: rgba(0,0,0,0.4); padding: 15px; border: 1px solid #1e293b; }
+/* MATRIX BUFFS & DEBUFFS */
+.vital-stats { background: rgba(0,0,0,0.4); padding: 15px; border: 1px solid #1e293b; margin-top: 15px;}
 .vital-stats h3 { color: #38bdf8; font-size: 0.85rem; margin-bottom: 12px; text-transform: uppercase; }
-.buff-wrapper { display: flex; flex-direction: column; gap: 10px; }
-.buff-item { border: 1px solid #1e293b; padding: 10px; position: relative; }
+.buff-wrapper { display: flex; flex-direction: column; gap: 12px; }
+.buff-item { border: 1px solid #1e293b; padding: 12px; position: relative; background: rgba(0,0,0,0.2); }
 .buff-item strong { font-size: 0.85rem; display: block; margin-bottom: 2px; }
-.buff-desc { font-size: 0.75rem; color: #64748b; margin: 0; }
-.buff-status { position: absolute; right: 10px; top: 10px; font-size: 0.7rem; font-weight: bold; }
+.buff-desc { font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px; }
+.buff-effect { font-size: 0.75rem; font-weight: bold; display: block; font-family: monospace; }
+
+.positive border-color { border-color: rgba(74, 222, 128, 0.3); }
 .positive strong { color: #4ade80; }
-.positive .buff-status { color: #4ade80; text-shadow: 0 0 5px rgba(74,222,128,0.4); }
-.neutral strong { color: #a855f7; }
-.neutral .buff-status { color: #a855f7; }
+.positive .buff-effect { color: #a3e635; }
 
-.threat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-.threat-box { background: rgba(15,23,42,0.5); padding: 10px; border: 1px dashed #1e293b; font-size: 0.85rem; font-weight: bold; }
-.rank-ex { color: #f43f5e; text-shadow: 0 0 5px rgba(244,63,94,0.4); }
+.negative { border-color: rgba(244, 63, 94, 0.3); background: rgba(244, 63, 94, 0.02); }
+.negative strong { color: #f43f5e; }
+.negative .buff-effect { color: #fda4af; font-style: italic; }
 
-/* ================= TIMELINE MODULE ================= */
+/* PSYCHOLOGICAL MATRIX PANELS */
+.psycho-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 8px; }
+.psycho-card { background: rgba(15, 23, 42, 0.3); border: 1px dashed #1e293b; padding: 10px 15px; display: flex; justify-content: space-between; font-size: 0.85rem; }
+.psycho-card strong { color: #38bdf8; font-size: 0.8rem; text-transform: uppercase; }
+.psycho-card span { color: #e2e8f0; font-weight: bold; }
+
+/* TIMELINE ARCHIVE */
 .system-timeline { position: relative; border-left: 2px solid #1e293b; padding-left: 20px; margin-left: 10px; }
 .time-node { position: relative; margin-bottom: 20px; }
 .node-year { position: absolute; left: -68px; top: 0; font-size: 0.8rem; font-weight: bold; color: #38bdf8; background: #02050a; padding: 0 4px; }
@@ -140,24 +139,22 @@ h2 { color: #00f0ff; font-size: 1.15rem; margin-bottom: 15px; text-shadow: 0 0 5
 .time-node.future .node-year { color: #4b5563; }
 .time-node.future h3 { color: #4b5563; font-style: italic; }
 
-/* ================= ATTRIBUTES & PASSIVES ================= */
+/* ATTRIBUTES */
 .attributes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-bottom: 25px; }
-.attr-card { 
-    background: rgba(15, 23, 42, 0.4); padding: 10px 15px; 
-    border: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center;
-}
+.attr-card { background: rgba(15, 23, 42, 0.4); padding: 10px 15px; border: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; }
 .attr-name { color: #e2e8f0; font-weight: bold; font-size: 0.85rem; }
 .attr-rank { font-weight: 900; font-size: 1.05rem; text-shadow: 0 0 6px currentColor; }
+.rank-ex { color: #f43f5e; }
 .rank-s { color: #f59e0b; }
 .rank-a { color: #38bdf8; }
-.rank-b { color: #94a3b8; }
+.rank-c { color: #64748b; text-shadow: none; }
 
 .passive-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
 .passive-card { background: rgba(0,0,0,0.4); border: 1px solid #1e293b; border-left: 3px solid #00f0ff; padding: 12px; }
 .passive-card h4 { color: #38bdf8; font-size: 0.9rem; margin-bottom: 4px; text-transform: uppercase; }
 .passive-card p { font-size: 0.8rem; color: #94a3b8; margin: 0; }
 
-/* Achievements */
+/* ACHIEVEMENTS */
 .achieve-container { display: flex; flex-wrap: wrap; gap: 8px; }
 .achieve-badge { background: #0b1324; border: 1px solid #1e293b; color: #94a3b8; padding: 6px 12px; font-size: 0.8rem; font-weight: bold; position: relative; }
 .achieve-badge.locked { border-color: rgba(239, 68, 68, 0.2); color: #4b5563; cursor: help; }
@@ -168,20 +165,21 @@ h2 { color: #00f0ff; font-size: 1.15rem; margin-bottom: 15px; text-shadow: 0 0 5
 }
 .achieve-badge.locked:hover .tooltip { visibility: visible; opacity: 1; }
 
-/* ================= SKILLS & INVENTORY ================= */
-.ability-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin-bottom: 25px;}
-.skill-item { 
-    background: rgba(15,23,42,0.3); border: 1px solid #1e293b; padding: 12px;
-    display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 0.9rem;
-}
+/* SKILLS & INVENTORY */
+.ability-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+.skill-item { background: rgba(15,23,42,0.3); border: 1px solid #1e293b; padding: 12px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 0.9rem; }
 .lvl-tag { color: #00f0ff; text-shadow: 0 0 5px rgba(0,240,255,0.3); }
 .locked-skill { border-color: rgba(239, 68, 68, 0.1); opacity: 0.4; }
 .locked-skill .lvl-tag { color: #ef4444; text-shadow: none; }
 
+.unknown-skill-card { background: rgba(0, 0, 0, 0.5); border: 1px dashed rgba(56, 189, 248, 0.3); padding: 15px; margin-top: 10px; margin-bottom: 25px; border-left: 3px solid #64748b; }
+.unknown-skill-card h4 { color: #64748b; letter-spacing: 2px; margin-bottom: 4px; }
+.unknown-skill-card p { font-size: 0.8rem; color: #4b5563; margin: 0; font-style: italic; }
+
 .inventory-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
 .inv-slot { background: #070e1b; border: 1px solid #1e293b; padding: 10px; text-align: center; font-size: 0.8rem; font-weight: bold; color: #e2e8f0; }
 
-/* ================= QUEST LOG ================= */
+/* QUESTS */
 .quest-list { list-style: none; margin-bottom: 20px; }
 .quest-item { margin-bottom: 10px; padding-left: 25px; position: relative; font-size: 0.9rem; }
 .quest-item.clear { color: #4ade80; }
@@ -192,6 +190,12 @@ h2 { color: #00f0ff; font-size: 1.15rem; margin-bottom: 15px; text-shadow: 0 0 5
 .ultimate-quest-box { background: rgba(245, 158, 11, 0.05); border: 1px dashed #f59e0b; padding: 15px; text-align: center; }
 .ultimate-quest-box p { color: #f59e0b; font-style: italic; font-size: 0.9rem; margin: 0; font-weight: bold;}
 
-/* ================= FOOTER ================= */
-.system-footer { border-top: 1px dashed #1e293b; margin-top: 30px; padding-top: 20px; text-align: center; }
+/* SYSTEM LOG SECTION */
+.system-log-section { background: rgba(0, 0, 0, 0.7); border: 1px solid #1e293b; padding: 15px; margin-top: 35px; font-family: monospace; border-left: 3px solid #38bdf8; }
+.log-title { color: #38bdf8; font-size: 0.85rem; font-weight: bold; margin-bottom: 8px; letter-spacing: 1px; }
+.log-lines p { font-size: 0.8rem; color: #64748b; margin-bottom: 4px; }
+.log-lines .log-highlight { color: #00f0ff; font-weight: bold; animation: blink 1.5s infinite; }
+
+/* FOOTER */
+.system-footer { border-top: 1px dashed #1e293b; margin-top: 25px; padding-top: 20px; text-align: center; }
 .motto { color: #fff; font-size: 1rem; font-style: italic; font-weight: bold; margin-bottom: 5px; }
