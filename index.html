@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Interface - Radel Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="system-container">
+    <header class="system-header">
+        <div class="system-avatar"></div>
+        <h1 class="glitch-text">Radel</h1>
+        <p class="system-subtitle">[ REPOSITORY LEVEL: EX-RANK ]</p>
+        <p class="system-nim">ID: 251572010038</p>
+    </header>
+
+    <nav class="system-tabs">
+        <button class="tab-link active" onclick="switchTab(event, 'status')">Status Menu</button>
+        <button class="tab-link" onclick="switchTab(event, 'abilities')">Abilities (Skills)</button>
+        <button class="tab-link" onclick="switchTab(event, 'quests')">Quest Log (Projects)</button>
+    </nav>
+
+    <main class="system-body">
+        <section id="status" class="tab-panel active">
+            <h2>[ User Evaluation ]</h2>
+            <p>Saya adalah mahasiswa Teknik Informatika / Sistem Informasi yang mendalami arsitektur infrastruktur server, otomatisasi kontainer, dan manajemen jaringan. Berfokus penuh pada eksplorasi teknologi modern untuk membangun ekosistem aplikasi yang stabil, cepat, terisolasi, dan aman dari berbagai gangguan sistem.</p>
+            
+            <div class="status-grid">
+                <div class="status-card"><strong>Mata Kuliah:</strong> Teknologi Kontainer (Pra UAS)</div>
+                <div class="status-card"><strong>Core Engine:</strong> Docker Engine v26+</div>
+            </div>
+        </section>
+
+        <section id="abilities" class="tab-panel">
+            <h2>[ Mastered Abilities ]</h2>
+            
+            <div class="ability-wrapper">
+                <div class="ability-slot">
+                    <div class="ability-label"><span>Docker & Containerization</span><span>90%</span></div>
+                    <div class="matrix-bar" style="--gauge: 90%;"></div>
+                </div>
+                
+                <div class="ability-slot">
+                    <div class="ability-label"><span>Linux Administration</span><span>85%</span></div>
+                    <div class="matrix-bar" style="--gauge: 85%;"></div>
+                </div>
+
+                <div class="ability-slot">
+                    <div class="ability-label"><span>Backend & API Architecture</span><span>75%</span></div>
+                    <div class="matrix-bar" style="--gauge: 75%;"></div>
+                </div>
+
+                <div class="ability-slot">
+                    <div class="ability-label"><span>Frontend Engineering</span><span>70%</span></div>
+                    <div class="matrix-bar" style="--gauge: 70%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quests" class="tab-panel">
+            <h2>[ Completed Quests ]</h2>
+            <div class="system-timeline">
+                <div class="quest-node">
+                    <div class="quest-stamp">S-RANK</div>
+                    <div class="quest-desc">
+                        <h3>Multi-Container Orchestration</h3>
+                        <p>Mengonfigurasi dan mengisolasi web service portofolio menggunakan Docker, mengoptimalkan penulisan Dockerfile berbasis Alpine Linux, serta mendistribusikan hasil *build image* ke Docker Hub melalui terminal.</p>
+                    </div>
+                </div>
+
+                <div class="quest-node">
+                    <div class="quest-stamp">A-RANK</div>
+                    <div class="quest-desc">
+                        <h3>System Monitoring & Deployment</h3>
+                        <p>Membangun arsitektur server lokal dan meluncurkan aplikasi web responsif terintegrasi, lengkap dengan manajemen port (*mapping*) yang dinamis pada server Linux.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script>
+function switchTab(evt, panelId) {
+    var i, panels, links;
+    panels = document.getElementsByClassName("tab-panel");
+    for (i = 0; i < panels.length; i++) {
+        panels[i].classList.remove("active");
+    }
+    links = document.getElementsByClassName("tab-link");
+    for (i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+    }
+    document.getElementById(panelId).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+</script>
+
+</body>
+</html>
