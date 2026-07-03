@@ -11,8 +11,8 @@
 <div id="system-loader">
     <div class="loader-content">
         <p class="blink-text">> Initializing System...</p>
-        <p class="delay-1">> Loading User Profile...</p>
-        <p class="delay-2">> Synchronizing Personal Attributes...</p>
+        <p class="delay-1">> Loading Character Profile...</p>
+        <p class="delay-2">> Synchronizing Psychological Matrix...</p>
         <p class="delay-3" style="color: #00f0ff;">> Status Window Activated.</p>
     </div>
 </div>
@@ -71,28 +71,22 @@
         <section id="status" class="tab-panel active">
             <h2>[ System Analysis ]</h2>
             <div class="status-layout">
-                <ul class="analysis-list">
-                    <li><strong>Subject Name</strong> <span>: Radel</span></li>
-                    <li><strong>Age / Level</strong> <span>: <span id="user-age">19</span> Years</span></li>
-                    <li><strong>Alignment</strong> <span>: Neutral Good</span></li>
-                    <li><strong>Growth Type</strong> <span>: Self-Taught Learner</span></li>
-                    <li><strong>Guild</strong> <span>: University Student</span></li>
-                    <li><strong>Affiliation</strong> <span>: Faculty of Computer Science</span></li>
-                    <li><strong>Occupation</strong> <span>: Student (Information Systems)</span></li>
-                </ul>
+                <p class="system-p italic-desc">
+                    "Seorang pembelajar yang memiliki rasa ingin tahu tinggi terhadap hampir semua hal. Lebih menikmati proses memahami dibanding sekadar mengetahui jawaban. Menyukai eksperimen sebagai cara belajar, baik melalui proyek teknologi, IoT, server, maupun dari hal sederhana seperti game strategi, anime, dan komik yang memperluas sudut pandang. Bekerja paling efektif secara mandiri, namun mampu menjadi penopang tim ketika situasi membutuhkan penyelesaian masalah. Saat ini masih membangun kepercayaan diri dalam komunikasi, tetapi terus berkembang melalui pengalaman dan tantangan baru."
+                </p>
                 
                 <div class="vital-stats">
-                    <h3>[ Active Buffs & States ]</h3>
+                    <h3>[ Buffs & Debuffs Matrix ]</h3>
                     <div class="buff-wrapper">
                         <div class="buff-item positive">
-                            <strong>Trusted Companion (Support Buff)</strong>
-                            <p class="buff-desc">+ Motivation, + Emotional Stability, + Confidence</p>
-                            <span class="buff-status">ACTIVE</span>
+                            <strong>Trusted Companion (Active Buff)</strong>
+                            <p class="buff-desc">A trusted person continues to provide emotional support during difficult times.</p>
+                            <span class="buff-effect">+10 Motivation, +8 Stability, +5 Confidence</span>
                         </div>
-                        <div class="buff-item neutral">
-                            <strong>Coffee Overload</strong>
-                            <p class="buff-desc">+ Temporary Focus, - Sleep Schedule</p>
-                            <span class="buff-status">ACTIVE</span>
+                        <div class="buff-item negative">
+                            <strong>Overthinking (Current Debuff)</strong>
+                            <p class="buff-desc">Sometimes spends too much time seeking the best solution before taking action.</p>
+                            <span class="buff-effect">Temporal Action Delay Activated</span>
                         </div>
                     </div>
                 </div>
@@ -100,13 +94,13 @@
 
             <div class="system-divider">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
             
-            <p class="system-msg-title">SYSTEM ANALYSIS COMPLETE.</p>
-            <p class="system-p">The subject demonstrates an unusually high level of curiosity. Rather than limiting exploration to a single discipline, the subject continuously seeks knowledge across software engineering, server infrastructure, IoT, networking, and various emerging technologies.</p>
-            <p class="system-p">Learning is driven not by obligation, but by genuine interest. Every unfamiliar concept is treated as a challenge worth understanding. Although the subject prefers working independently due to an introverted nature, cooperation becomes highly effective when the situation requires decisive problem solving.</p>
-            
-            <div class="threat-grid">
-                <div class="threat-box">Threat Level: <span style="color: #64748b;">Under Evaluation</span></div>
-                <div class="threat-box">Growth Potential: <span class="rank-ex">Unmeasured</span></div>
+            <h2>[ Psychological Analysis ]</h2>
+            <div class="psycho-grid">
+                <div class="psycho-card"><strong>Personality</strong><span>Introvert</span></div>
+                <div class="psycho-card"><strong>Learning Style</strong><span>Hands-on Experimentation</span></div>
+                <div class="psycho-card"><strong>Thinking Style</strong><span>Analytical</span></div>
+                <div class="psycho-card"><strong>Decision Making</strong><span>Observation First</span></div>
+                <div class="psycho-card"><strong>Favorite Environment</strong><span>Independent Workspace</span></div>
             </div>
 
             <h2 style="margin-top: 35px;">[ Timeline Archive ]</h2>
@@ -142,13 +136,12 @@
             <h2>[ Personal Attributes ]</h2>
             <div class="attributes-grid">
                 <div class="attr-card"><span class="attr-name">Curiosity</span><span class="attr-rank rank-ex">EX</span></div>
-                <div class="attr-card"><span class="attr-name">Learning Ability</span><span class="attr-rank rank-s">S</span></div>
-                <div class="attr-card"><span class="attr-name">Problem Solving</span><span class="attr-rank rank-s">A+</span></div>
-                <div class="attr-card"><span class="attr-name">Persistence</span><span class="attr-rank rank-s">S</span></div>
-                <div class="attr-card"><span class="attr-name">Consistency</span><span class="attr-rank rank-a">A</span></div>
+                <div class="attr-card"><span class="attr-name">Adaptability</span><span class="attr-rank rank-s">A+</span></div>
+                <div class="attr-card"><span class="attr-name">Critical Thinking</span><span class="attr-rank rank-s">A+</span></div>
+                <div class="attr-card"><span class="attr-name">Persistence</span><span class="attr-rank rank-a">A</span></div>
                 <div class="attr-card"><span class="attr-name">Responsibility</span><span class="attr-rank rank-a">A</span></div>
-                <div class="attr-card"><span class="attr-name">Kindness</span><span class="attr-rank rank-a">A</span></div>
-                <div class="attr-card"><span class="attr-name">Patience</span><span class="attr-rank rank-b">B+</span></div>
+                <div class="attr-card"><span class="attr-name">Communication</span><span class="attr-rank rank-c">C</span></div>
+                <div class="attr-card"><span class="attr-name">Leadership</span><span class="attr-rank rank-c">C</span></div>
             </div>
 
             <h2 style="margin-top: 30px;">[ Passive Skills ]</h2>
@@ -199,6 +192,12 @@
                 <div class="skill-item locked-skill"><span>AI Engineering</span><span class="lvl-tag">Locked</span></div>
             </div>
 
+            <h2 style="margin-top: 30px;">[ Unknown Skill ]</h2>
+            <div class="unknown-skill-card">
+                <h4>???</h4>
+                <p>Unlock Requirement: Continue exploring.</p>
+            </div>
+
             <h2 style="margin-top: 35px;">[ Developer Inventory ]</h2>
             <div class="inventory-grid">
                 <div class="inv-slot">🐳 Docker</div>
@@ -235,15 +234,25 @@
                 <li class="quest-item clear">Joined Student Executive Board (BEM Organization)</li>
             </ul>
 
-            <h2 style="margin-top: 30px;">[ Ultimate Objective ]</h2>
+            <h2 style="margin-top: 30px;">[ Final Quest ]</h2>
             <div class="ultimate-quest-box">
-                <p>"Create something meaningful that allows the name 'Radel' to continue existing even after time moves on."</p>
+                <p>"Create something meaningful enough that people remember the name behind it."</p>
             </div>
         </section>
     </main>
 
+    <div class="system-log-section">
+        <div class="log-title">SYSTEM LOG</div>
+        <div class="log-lines">
+            <p>> Every project completed increased experience.</p>
+            <p>> Every failure revealed a new lesson.</p>
+            <p>> Every unanswered question unlocked another journey.</p>
+            <p class="log-highlight">> Current Status: Still Exploring...</p>
+        </div>
+    </div>
+
     <footer class="system-footer">
-        <p class="motto">"I don't want to know everything. I just don't want to stop learning."</p>
+        <p class="motto">"Knowledge increases with every challenge completed."</p>
         <p class="sys-msg">— System Message</p>
     </footer>
 </div>
@@ -264,12 +273,11 @@ setInterval(updateClock, 1000);
 // 2. AUTOMATIC LEVEL UP LOGIC
 function calculateLevelAndAge() {
     try {
-        const birthDate = new Date(2007, 6, 15); // Ganti Tanggal Lahir Sesuai Aslimu (Bulan dikurang 1)
+        const birthDate = new Date(2007, 6, 15); // Sesuai data kamu
         const today = new Date();
         let age = today.getFullYear() - birthDate.getFullYear();
         const monthDiff = today.getMonth() - birthDate.getMonth();
         if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) { age--; }
-        
         const ageEl = document.getElementById("user-age");
         if (ageEl) ageEl.innerText = age;
     } catch (err) { console.log(err); }
