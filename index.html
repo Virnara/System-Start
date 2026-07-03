@@ -3,96 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Interface - Radel Profile</title>
+    <title>System Interface - Radel Status Window</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div id="system-loader">
+    <div class="loader-content">
+        <p class="blink-text">> Initializing System...</p>
+        <p class="delay-1">> Loading User Profile...</p>
+        <p class="delay-2">> Synchronizing Attributes...</p>
+        <p class="delay-3" style="color: #00f0ff;">> Status Window Activated.</p>
+    </div>
+</div>
 
 <div class="system-container">
     <header class="system-header">
         <div class="system-avatar"></div>
         <h1 class="glitch-text">Radel</h1>
-        <p class="system-subtitle">[ REPOSITORY LEVEL: EX-RANK ]</p>
-        <p class="system-nim">ID: 251572010038</p>
+        <p class="system-subtitle">《 SYSTEM USER 》</p>
+        
+        <div class="header-status-grid">
+            <div><strong>Level :</strong> <span id="user-level">19</span></div>
+            <div><strong>Class :</strong> Information Systems Student</div>
+            <div><strong>Title :</strong> Container Explorer</div>
+            <div><strong>Player ID :</strong> 251572010038</div>
+            <div><strong>Status :</strong> <span class="status-online">Online</span></div>
+        </div>
     </header>
 
     <nav class="system-tabs">
-        <button class="tab-link active" onclick="switchTab(event, 'status')">Status Menu</button>
-        <button class="tab-link" onclick="switchTab(event, 'abilities')">Abilities (Skills)</button>
-        <button class="tab-link" onclick="switchTab(event, 'quests')">Quest Log (Projects)</button>
+        <button class="tab-link active" onclick="switchTab(event, 'status')">Status</button>
+        <button class="tab-link" onclick="switchTab(event, 'attributes')">Attributes</button>
+        <button class="tab-link" onclick="switchTab(event, 'skills')">Abilities</button>
+        <button class="tab-link" onclick="switchTab(event, 'quests')">Quest Log</button>
     </nav>
 
     <main class="system-body">
+        
         <section id="status" class="tab-panel active">
-            <h2>[ User Evaluation ]</h2>
-            <p>Saya adalah mahasiswa Teknik Informatika / Sistem Informasi yang mendalami arsitektur infrastruktur server, otomatisasi kontainer, dan manajemen jaringan. Berfokus penuh pada eksplorasi teknologi modern untuk membangun ekosistem aplikasi yang stabil, cepat, terisolasi, dan aman dari berbagai gangguan sistem.</p>
+            <h2>[ System Analysis ]</h2>
+            <ul class="analysis-list">
+                <li><strong>Nama</strong> <span>: Radel</span></li>
+                <li><strong>Age</strong> <span>: <span id="user-age">19</span> Years</span></li>
+                <li><strong>Level</strong> <span>: <span id="user-level-card">19</span></span></li>
+                <li><strong>Occupation</strong> <span>: Information Systems Student</span></li>
+            </ul>
+            <div class="system-divider">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+            <p class="system-msg-title">The System has completed its analysis.</p>
+            <p class="system-p">The user is an Information Systems student with a strong curiosity for technology and problem solving. Rather than only learning theories, the user prefers experimenting directly through projects and real implementations.</p>
+            <p class="system-p">Current interests include Linux, Docker, backend architecture, networking, and infrastructure. Every project is treated as an opportunity to gain experience and continuously improve.</p>
             
-            <div class="status-grid">
-                <div class="status-card"><strong>Mata Kuliah:</strong> Teknologi Kontainer (Pra UAS)</div>
-                <div class="status-card"><strong>Core Engine:</strong> Docker Engine v26+</div>
+            <h2 style="margin-top: 30px;">[ Current Mission ]</h2>
+            <ul class="mission-list">
+                <li class="mission-item done">Complete Bachelor's Degree</li>
+                <li class="mission-item done">Master Docker & Linux</li>
+                <li class="mission-item done">Learn Cloud Computing</li>
+                <li class="mission-item">Build Useful Applications</li>
+                <li class="mission-item">Publish More Projects</li>
+                <li class="mission-item">Become DevOps / Cloud Engineer</li>
+            </ul>
+        </section>
+
+        <section id="attributes" class="tab-panel">
+            <h2>[ Personal Attributes ]</h2>
+            <div class="attributes-grid">
+                <div class="attr-card"><span class="attr-name">Knowledge</span><span class="attr-rank rank-s">S+</span></div>
+                <div class="attr-card"><span class="attr-name">Curiosity</span><span class="attr-rank rank-ex">EX</span></div>
+                <div class="attr-card"><span class="attr-name">Creativity</span><span class="attr-rank rank-a">A+</span></div>
+                <div class="attr-card"><span class="attr-name">Problem Solving</span><span class="attr-rank rank-s">S</span></div>
+                <div class="attr-card"><span class="attr-name">Adaptability</span><span class="attr-rank rank-a">A</span></div>
+                <div class="attr-card"><span class="attr-name">Discipline</span><span class="attr-rank rank-b">B+</span></div>
+                <div class="attr-card"><span class="attr-name">Communication</span><span class="attr-rank rank-b">B</span></div>
+                <div class="attr-card"><span class="attr-name">Leadership</span><span class="attr-rank rank-b">B</span></div>
+            </div>
+
+            <h2 style="margin-top: 30px;">[ Achievement Unlocked ]</h2>
+            <div class="achieve-container">
+                <div class="achieve-badge">🏆 First Container</div>
+                <div class="achieve-badge">🏆 Linux Explorer</div>
+                <div class="achieve-badge">🏆 Docker Initiate</div>
+                <div class="achieve-badge">🏆 Continuous Learner</div>
+                <div class="achieve-badge">🏆 Repository Guardian</div>
             </div>
         </section>
 
-        <section id="abilities" class="tab-panel">
-            <h2>[ Mastered Abilities ]</h2>
-            
+        <section id="skills" class="tab-panel">
+            <h2>[ Learned Skills ]</h2>
             <div class="ability-wrapper">
                 <div class="ability-slot">
-                    <div class="ability-label"><span>Docker & Containerization</span><span>90%</span></div>
-                    <div class="matrix-bar" style="--gauge: 90%;"></div>
+                    <div class="ability-label"><span>Docker & Containerization</span><span>█████████░</span></div>
                 </div>
-                
                 <div class="ability-slot">
-                    <div class="ability-label"><span>Linux Administration</span><span>85%</span></div>
-                    <div class="matrix-bar" style="--gauge: 85%;"></div>
+                    <div class="ability-label"><span>Linux Administration</span><span>████████░░</span></div>
                 </div>
-
                 <div class="ability-slot">
-                    <div class="ability-label"><span>Backend & API Architecture</span><span>75%</span></div>
-                    <div class="matrix-bar" style="--gauge: 75%;"></div>
+                    <div class="ability-label"><span>Backend Development</span><span>███████░░░</span></div>
                 </div>
-
                 <div class="ability-slot">
-                    <div class="ability-label"><span>Frontend Engineering</span><span>70%</span></div>
-                    <div class="matrix-bar" style="--gauge: 70%;"></div>
+                    <div class="ability-label"><span>Networking Architecture</span><span>███████░░░</span></div>
+                </div>
+                <div class="ability-slot">
+                    <div class="ability-label"><span>Git & GitHub Control</span><span>████████░░</span></div>
+                </div>
+                <div class="ability-slot">
+                    <div class="ability-label"><span>Database Design</span><span>███████░░░</span></div>
                 </div>
             </div>
         </section>
 
         <section id="quests" class="tab-panel">
             <h2>[ Completed Quests ]</h2>
-            <div class="system-timeline">
-                <div class="quest-node">
-                    <div class="quest-stamp">S-RANK</div>
-                    <div class="quest-desc">
-                        <h3>Multi-Container Orchestration</h3>
-                        <p>Mengonfigurasi dan mengisolasi web service portofolio menggunakan Docker, mengoptimalkan penulisan Dockerfile berbasis Alpine Linux, serta mendistribusikan hasil *build image* ke Docker Hub melalui terminal.</p>
-                    </div>
-                </div>
-
-                <div class="quest-node">
-                    <div class="quest-stamp">A-RANK</div>
-                    <div class="quest-desc">
-                        <h3>System Monitoring & Deployment</h3>
-                        <p>Membangun arsitektur server lokal dan meluncurkan aplikasi web responsif terintegrasi, lengkap dengan manajemen port (*mapping*) yang dinamis pada server Linux.</p>
-                    </div>
-                </div>
-            </div>
+            <ul class="quest-list">
+                <li class="quest-item clear">Started University</li>
+                <li class="quest-item clear">Learned Programming Fundamentals</li>
+                <li class="quest-item clear">Built First Docker Image</li>
+                <li class="quest-item clear">Deployed First Container</li>
+                <li class="quest-item clear">Joined Student Organization</li>
+                <li class="quest-item open">Graduate with Excellent GPA</li>
+                <li class="quest-item open">Build Personal Portfolio</li>
+                <li class="quest-item open">Learn Kubernetes</li>
+                <li class="quest-item open">Deploy Production Server</li>
+                <li class="quest-item open">Become Cloud Engineer</li>
+            </ul>
         </section>
     </main>
+
+    <footer class="system-footer">
+        <p class="motto">"Build. Break. Learn. Repeat."</p>
+        <p class="sys-msg">— System Message</p>
+    </footer>
 </div>
 
 <script>
+// 1. FUNGSI UTAMA AUTOMATIC LEVEL UP (BERDASARKAN TANGGAL LAHIR)
+function calculateLevelAndAge() {
+    // Sesuai data kamu: Umur 19 tahun di tahun 2026, berarti tahun lahir 2007
+    // Silakan ganti bulan (0-11) dan tanggal sesuai hari ulang tahun aslimu
+    const birthDate = new Date(2007, 6, 15); // Contoh: 15 Juli 2007
+    const today = new Date();
+    
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    
+    // Set level sama dengan umur secara otomatis
+    document.getElementById("user-age").innerText = age;
+    document.getElementById("user-level").innerText = age;
+    document.getElementById("user-level-card").innerText = age;
+}
+
+// 2. FUNGSI ANIMASI LOADING HUD SYSTEM
+window.addEventListener('DOMContentLoaded', () => {
+    calculateLevelAndAge();
+    setTimeout(() => {
+        const loader = document.getElementById('system-loader');
+        loader.style.opacity = '0';
+        setTimeout(() => { loader.style.display = 'none'; }, 500);
+    }, 2800); // Tampilan Loading HUD selama 2.8 detik
+});
+
+// 3. FUNGSI PERALIHAN MENU TAB
 function switchTab(evt, panelId) {
-    var i, panels, links;
+    let i, panels, links;
     panels = document.getElementsByClassName("tab-panel");
-    for (i = 0; i < panels.length; i++) {
-        panels[i].classList.remove("active");
-    }
+    for (i = 0; i < panels.length; i++) { panels[i].classList.remove("active"); }
     links = document.getElementsByClassName("tab-link");
-    for (i = 0; i < links.length; i++) {
-        links[i].classList.remove("active");
-    }
+    for (i = 0; i < links.length; i++) { links[i].classList.remove("active"); }
     document.getElementById(panelId).classList.add("active");
     evt.currentTarget.classList.add("active");
 }
